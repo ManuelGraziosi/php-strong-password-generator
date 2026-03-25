@@ -49,6 +49,28 @@ if ($password != "") {
                            max="30"
                            value="10">
                 </div>
+                <div class="d-flex flex-column">
+                    <label for="lower_letters">Lettere minuscole</label>
+                    <input id="lower_letters"
+                           name="lower_letters"
+                           type="checkbox">
+
+                    <label for="upper_letters">Lettere MAIUSCOLE</label>
+                    <input id="upper_letters"
+                           name="upper_letters"
+                           type="checkbox">
+
+                    <label for="numbers">Numeri</label>
+                    <input id="numbers"
+                           name="numbers"
+                           type="checkbox">
+
+                    <label for="symbols">Simboli</label>
+                    <input id="symbols"
+                           name="symbols"
+                           type="checkbox">
+                </div>
+
                 <button class="btn btn-primary"
                         type="submit">Genera</button>
             </form>
