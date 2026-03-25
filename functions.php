@@ -1,12 +1,18 @@
 <?php
-function generatePassword($length)
-{
+
+
+$password = '';
+
+if (isset($_GET["password_lenght"])) {
+
+    $length = $_GET["password_lenght"];
+
     $numbers = '0123456789';
     $lower_letters = 'abcdefghijklmnopqrstuvwxyz';
     $capital_letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    $symbols = ',;.:-_ç@°#§[]{}!"£$%&/()=?';
+    $symbols = '!@#$%^&*()';
 
-    $tmp_password = '';
+
     $tmp_symbol = '';
 
     for ($i = 0; $i < $length; $i++) {
@@ -33,10 +39,8 @@ function generatePassword($length)
                 //echo $tmp_symbol . "<br>";
                 break;
         }
-        $tmp_password .= $tmp_symbol;
+        $password .= $tmp_symbol;
     }
-
-    return $tmp_password;
 
 }
 

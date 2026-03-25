@@ -1,7 +1,20 @@
 <?php
-require_once "./functions.php"
+require_once "./functions.php";
 
-    ?>
+
+// avvio della sessione
+
+if ($password != "") {
+
+    session_start();
+
+    $_SESSION["password"] = $password;
+
+    header("Location: ./result.php");
+}
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,22 +45,22 @@ require_once "./functions.php"
                            type="number"
                            id="password_lenght"
                            name="password_lenght"
-                           min="0"
-                           max="20"
+                           min="8"
+                           max="30"
                            value="10">
                 </div>
                 <button class="btn btn-primary"
                         type="submit">Genera</button>
             </form>
         </section>
-        <?php
 
-        $length = (isset($_GET["password_lenght"]) ? $_GET["password_lenght"] : null);
-
-        echo "la password generata è: " . generatePassword($length);
-
-
-        ?>
+        <div>
+            <pre>
+                <?php
+                echo $password
+                    ?>
+                </pre>
+        </div>
     </div>
 
 </body>
